@@ -165,6 +165,7 @@ const ShimmerTitle = styled.h1`
 
 const GoldTitle = styled.h2`
   color: var(--title-text-color);
+  text-align: center;
 `
 
 const LogoAligner = styled.div`
@@ -604,13 +605,13 @@ const Home = (props: HomeProps) => {
             <GoldTitle>500 Solana GIVE-BACK Contests to Our Members</GoldTitle>
          </LogoAligner>
            <p>
-             <ul>
-               <li>100 Solana donated to Charity</li>
-               <li>100 Solana Grand Prize</li>
-               <li>150 Solana Divided between 3 winners – 50 Solana each</li>
-               <li>100 Solana Divided between 4 winners – 25 Solana each</li>
-               <li>50 Solana Divided between 5 winners – 10 Solana each</li>
-             </ul>
+             
+               100 Solana donated to Charity
+               100 Solana Grand Prize
+               150 Solana Divided between 3 winners – 50 Solana each
+               100 Solana Divided between 4 winners – 25 Solana each
+               50 Solana Divided between 5 winners – 10 Solana each
+             
            </p>
         <p>
           Throughout our minting period we have selected several milestones
