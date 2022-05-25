@@ -169,7 +169,7 @@ color: var(--title-text-color);
 `
 
 const LogoAligner = styled.div`
-  display: flex;
+  display: inline-block;
   align-items: center;
 
   img {
