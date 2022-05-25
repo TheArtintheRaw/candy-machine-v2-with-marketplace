@@ -168,7 +168,11 @@ const GoldTitle = styled.h2`
 `
 
 const LogoAligner = styled.div`
+<<<<<<< HEAD
   display: inline-flex;
+=======
+  display: inline-block;
+>>>>>>> 6a9637d30b1f074cea373bbea6050cce0a6fb392
   align-items: center;
 
   img {
@@ -600,9 +604,9 @@ const Home = (props: HomeProps) => {
             <ul>
               <li>100 Solana donated to Charity</li>
               <li>100 Solana Grand Prize</li>
-              <li>150 Solana Divided between 3 winners – 50 Solana each</li>
-              <li>100 Solana Divided between 4 winners – 25 Solana each</li>
-              <li>50 Solana Divided between 5 winners – 10 Solana each</li>
+              <li>150 Solana Divided between 3 winners at 50 Solana each</li>
+              <li>100 Solana Divided between 4 winners at 25 Solana each</li>
+              <li>50 Solana Divided between 5 winners at 10 Solana each</li>
             </ul>
           </p>
         </Des>
