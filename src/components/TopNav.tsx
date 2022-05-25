@@ -54,7 +54,7 @@ const TopNav: React.FC<TopNavProps> = ({
     <HeaderBar>
       <Logo>
         <Link to='/'>
-          <img alt='' src='/logo.png' />
+          <img alt='' src='/HEADER.png' />
         </Link>
       </Logo>
       <Menu>
@@ -67,25 +67,25 @@ const TopNav: React.FC<TopNavProps> = ({
         <li>
           <Link to='/sell'>Sell</Link>
         </li>
-        <DropdownAnchor ref={anchorRef} onClick={handleToggle}>
-          Other Layouts
-          <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
-            {({ TransitionProps, placement }) => (
+       {/* <DropdownAnchor ref={anchorRef} onClick={handleToggle}>
+         Other Layouts
+         <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+           {({ TransitionProps, placement }) => (
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} onKeyDown={handleListKeyDown}>
                     <MenuItem><Link to='/custom-token-marketplace'>Custom Token Marketplace</Link></MenuItem>
-                    <MenuItem><Link to='/multi-collection-marketplace'>Multi Collection Marketplace</Link></MenuItem>
-                    <MenuItem><Link to='/marketplace-with-url'>Marketplace With URL</Link></MenuItem>
-                    <MenuItem><Link to='/multi-currency-marketplace'>Multi Currency Marketplace</Link></MenuItem>
-                    <MenuItem><Link to='/multi-currency-sell'>Multi Currency Sell</Link></MenuItem>
-                  </MenuList>
-                </ClickAwayListener>
-              </Paper>
-            )}
+                     <MenuItem><Link to='/multi-collection-marketplace'>Multi Collection Marketplace</Link></MenuItem>
+                  <MenuItem><Link to='/marketplace-with-url'>Marketplace With URL</Link></MenuItem>
+                   <MenuItem><Link to='/multi-currency-marketplace'>Multi Currency Marketplace</Link></MenuItem>
+                  <MenuItem><Link to='/multi-currency-sell'>Multi Currency Sell</Link></MenuItem>
+                </MenuList>
+               </ClickAwayListener>
+             </Paper>
+           )}
           </Popper>
-        </DropdownAnchor>
-      </Menu>
+        </DropdownAnchor> */}
+       </Menu>
       { showCurrencyToggle && <CurrencyToggle />}
       <Wallet>
         {wallet ? (
@@ -133,8 +133,9 @@ const DropdownAnchor = styled.li`
   }
 `
 
-// const WalletAmount = styled.div`
-//   color: black;
+// const WalletAmount = styled.div
+  
+//  color: black;
 //   width: auto;
 //   padding: 5px 5px 5px 16px;
 //   min-width: 48px;
@@ -150,7 +151,7 @@ const DropdownAnchor = styled.li`
 //   line-height: 1.75;
 //   text-transform: uppercase;
 //   border: 0;
-//   margin: 0;
+//  margin: 0;
 //   display: inline-flex;
 //   outline: 0;
 //   position: relative;

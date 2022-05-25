@@ -470,7 +470,7 @@ const Home = (props: HomeProps) => {
       <DesContainer>
         <NFT elevation={3}>
           <ShimmerTitle>MINT IS LIVE!</ShimmerTitle>
-          <h2>My NFT</h2>
+          <h2>Ghostlife Club #SOLtergeists</h2>
           <br />
           <div>
             <Price
@@ -586,58 +586,55 @@ const Home = (props: HomeProps) => {
       <DesContainer>
         <Des elevation={2}>
           <LogoAligner>
-            <img src='logo.png' alt=''></img>
-            <GoldTitle>TITLE 1</GoldTitle>
+            <img src='HEADER.png' alt=''></img>
+            <GoldTitle>Ghostlife Club</GoldTitle>
           </LogoAligner>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt.
+            Minting a Soltergeist will grant you an exclusive membership
+             to everything Ghostlife Club has to offer.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt.
+          Ranging from discounts, free Merch items as well as early access to
+           future limited collaboration mints and even $sol give-aways
           </p>
         </Des>
         <Des elevation={2}>
           <LogoAligner>
-            <img src='logo.png' alt=''></img>
-            <GoldTitle>TITLE 2</GoldTitle>
-          </LogoAligner>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt.
+            <img src='HEADER.png' alt=''></img>
+            <GoldTitle>500 Solana GIVE-BACK Contests to Our Members</GoldTitle>
+         </LogoAligner>
+           <p>
+             <ul>
+               <li>100 Solana donated to Charity</li>
+               <li>100 Solana Grand Prize</li>
+               <li>150 Solana Divided between 3 winners – 50 Solana each</li>
+               <li>100 Solana Divided between 4 winners – 25 Solana each</li>
+               <li>50 Solana Divided between 5 winners – 10 Solana each</li>
+             </ul>
+           </p>
+        <p>
+          Throughout our minting period we have selected several milestones
+           to hold contests in order to give back to our members.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt.
+          These contest and draws will be held in our discord and will be announced
+           to the community over our social platforms and outlined in our roadmap.
           </p>
         </Des>
         <Des elevation={2}>
           <LogoAligner>
-            <img src='logo.png' alt=''></img>
-            <GoldTitle>TITLE 3</GoldTitle>
+            <img src='HEADER.png' alt=''></img>
+            <GoldTitle>Sticking to Our Guns</GoldTitle>
           </LogoAligner>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt.
+          In conclusion, we have no intention of rushing or cutting corners in the process
+           of building our platfrom. We are here to be one of the pioneers in the space. 
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt.
+          As the ecosystem grows it will go through constant changes and ups and downs,
+           we are prepared to endure and be innovative through out these times while remaining who we are as a brand.
           </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt.
-          </p>
-        </Des>
+         </Des>
       </DesContainer>
       <Snackbar
         open={alertState.open}
