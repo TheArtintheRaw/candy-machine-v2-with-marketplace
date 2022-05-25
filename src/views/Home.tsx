@@ -44,7 +44,7 @@ const NFT = styled(Paper)`
 `
 
 const Des = styled(NFT)`
-  text-align: left;
+  text-align: center;
   padding-top: 20px;
 `
 
@@ -589,11 +589,11 @@ const Home = (props: HomeProps) => {
             <img src='HEADER.png' alt=''></img>
             <GoldTitle>Ghostlife Club</GoldTitle>
           </LogoAligner>
-          <p style="text-align:center">
+          <p>
             Minting a Soltergeist will grant you an exclusive membership
              to everything Ghostlife Club has to offer.
           </p>
-          <p style="text-align:center">
+          <p>
           Ranging from discounts, free Merch items as well as early access to
            future limited collaboration mints and even $sol give-aways
           </p>
@@ -603,7 +603,7 @@ const Home = (props: HomeProps) => {
             <img src='HEADER.png' alt=''></img>
             <GoldTitle>500 Solana GIVE-BACK Contests to Our Members</GoldTitle>
          </LogoAligner>
-           <p style="text-align:center">
+           <p>
              <ul>
                <li>100 Solana donated to Charity</li>
                <li>100 Solana Grand Prize</li>
@@ -612,11 +612,11 @@ const Home = (props: HomeProps) => {
                <li>50 Solana Divided between 5 winners – 10 Solana each</li>
              </ul>
            </p>
-        <p style="text-align:center">
+        <p>
           Throughout our minting period we have selected several milestones
            to hold contests in order to give back to our members.
           </p>
-          <p style="text-align:center">
+          <p>
           These contest and draws will be held in our discord and will be announced
            to the community over our social platforms and outlined in our roadmap.
           </p>
@@ -626,11 +626,11 @@ const Home = (props: HomeProps) => {
             <img src='HEADER.png' alt=''></img>
             <GoldTitle>Sticking to Our Guns</GoldTitle>
           </LogoAligner>
-          <p style="text-align:center">
+          <p>
           In conclusion, we have no intention of rushing or cutting corners in the process
            of building our platfrom. We are here to be one of the pioneers in the space. 
           </p>
-          <p style="text-align:center">
+          <p>
           As the ecosystem grows it will go through constant changes and ups and downs,
            we are prepared to endure and be innovative through out these times while remaining who we are as a brand.
           </p>
