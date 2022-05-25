@@ -164,8 +164,8 @@ const ShimmerTitle = styled.h1`
 `
 
 const GoldTitle = styled.h2`
-  color: var(--title-text-color);
-  text-align: center;
+text-align: center;
+color: var(--title-text-color);
 `
 
 const LogoAligner = styled.div`
