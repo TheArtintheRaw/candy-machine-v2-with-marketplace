@@ -3,8 +3,8 @@
 /* Customize your main colors in :root variables */
 :root {
   --main-background-color: #18191a;
-  --card-background-color: #309b72;
-  --card-background-lighter-color: #ec59aa;
+  --card-background-color: #5b036d;
+  --card-background-lighter-color: #59ec91;
   --main-text-color: #f7f6f4;
   --title-text-color: #feffff;
 }
