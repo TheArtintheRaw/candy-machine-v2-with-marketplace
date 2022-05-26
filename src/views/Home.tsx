@@ -44,7 +44,7 @@ const NFT = styled(Paper)`
 `
 
 const Des = styled(NFT)`
-  text-align: left;
+  text-align: center;
   padding-top: 20px;
 `
 
@@ -100,7 +100,7 @@ const SolExplorerLink = styled.a`
   }
 `
 
-export const MintContainer = styled.div`
+const MintContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1 1 auto;
@@ -168,11 +168,7 @@ const GoldTitle = styled.h2`
 `
 
 const LogoAligner = styled.div`
-<<<<<<< HEAD
-  display: inline-flex;
-=======
-  display: inline-block;
->>>>>>> 6a9637d30b1f074cea373bbea6050cce0a6fb392
+  display: flex;
   align-items: center;
 
   img {
@@ -470,7 +466,7 @@ const Home = (props: HomeProps) => {
   ])
 
   return (
-    <><MintContainer>
+    <MintContainer>
       <DesContainer>
         <NFT elevation={3}>
           <ShimmerTitle>MINT IS LIVE!</ShimmerTitle>
@@ -478,9 +474,12 @@ const Home = (props: HomeProps) => {
           <br />
           <div>
             <Price
-              label={isActive && whitelistEnabled && whitelistTokenBalance > 0
-                ? whitelistPrice + ' ' + priceLabel
-                : price + ' ' + priceLabel} />
+              label={
+                isActive && whitelistEnabled && whitelistTokenBalance > 0
+                  ? whitelistPrice + ' ' + priceLabel
+                  : price + ' ' + priceLabel
+              }
+            />
             <Image src='cool-cats.gif' alt='NFT To Mint' />
           </div>
           <br />
@@ -503,41 +502,44 @@ const Home = (props: HomeProps) => {
           {wallet && isActive && endDate && Date.now() < endDate.getTime() && (
             <Countdown
               date={toDate(candyMachine?.state?.endSettings?.number)}
-              onMount={({ completed }: { completed: any} ) => completed && setIsEnded(true)}
+              onMount={({ completed }: { completed: any}) => completed && setIsEnded(true)}
               onComplete={() => {
                 setIsEnded(true)
-              } }
-              renderer={renderEndDateCounter} />
+              }}
+              renderer={renderEndDateCounter}
+            />
           )}
           {wallet && isActive && (
             <h3>
-              TOTAL MINTED: {itemsRedeemed} / {itemsAvailable}
+              TOTAL MINTED : {itemsRedeemed} / {itemsAvailable}
             </h3>
           )}
           {wallet && isActive && (
             <BorderLinearProgress
               variant='determinate'
-              value={100 - (itemsRemaining * 100) / itemsAvailable} />
+              value={100 - (itemsRemaining * 100) / itemsAvailable}
+            />
           )}
           <br />
           <MintButtonContainer>
             {!isActive &&
-              !isEnded &&
-              candyMachine?.state.goLiveDate &&
-              (!isWLOnly || whitelistTokenBalance > 0) ? (
+            !isEnded &&
+            candyMachine?.state.goLiveDate &&
+            (!isWLOnly || whitelistTokenBalance > 0) ? (
               <Countdown
                 date={toDate(candyMachine?.state.goLiveDate)}
-                onMount={({ completed }: { completed: any} ) => completed && setIsActive(!isEnded)}
+                onMount={({ completed }: { completed: any}) => completed && setIsActive(!isEnded)}
                 onComplete={() => {
                   setIsActive(!isEnded)
-                } }
-                renderer={renderGoLiveDateCounter} />
+                }}
+                renderer={renderGoLiveDateCounter}
+              />
             ) : !wallet ? (
               <ConnectButton>Connect Wallet</ConnectButton>
             ) : !isWLOnly || whitelistTokenBalance > 0 ? (
               candyMachine?.state.gatekeeper &&
-                wallet.publicKey &&
-                wallet.signTransaction ? (
+              wallet.publicKey &&
+              wallet.signTransaction ? (
                 <GatewayProvider
                   wallet={{
                     publicKey: wallet.publicKey || new PublicKey(CANDY_MACHINE_PROGRAM),
@@ -547,7 +549,6 @@ const Home = (props: HomeProps) => {
                   // // Replace with following when added
                   // gatekeeperNetwork={candyMachine.state.gatekeeper_network}
                   gatekeeperNetwork={candyMachine?.state?.gatekeeper?.gatekeeperNetwork} // This is the ignite (captcha) network
-
                   /// Don't need this for mainnet
                   clusterUrl={rpcUrl}
                   options={{ autoShowModal: false }}>
@@ -557,7 +558,8 @@ const Home = (props: HomeProps) => {
                     isActive={isActive}
                     isEnded={isEnded}
                     isSoldOut={isSoldOut}
-                    onMint={onMint} />
+                    onMint={onMint}
+                  />
                 </GatewayProvider>
               ) : (
                 <MintButton
@@ -566,7 +568,8 @@ const Home = (props: HomeProps) => {
                   isActive={isActive}
                   isEnded={isEnded}
                   isSoldOut={isSoldOut}
-                  onMint={onMint} />
+                  onMint={onMint}
+                />
               )
             ) : (
               <h1>Mint is private.</h1>
@@ -588,63 +591,63 @@ const Home = (props: HomeProps) => {
           </LogoAligner>
           <p>
             Minting a Soltergeist will grant you an exclusive membership
-            to everything Ghostlife Club has to offer.
+             to everything Ghostlife Club has to offer.
           </p>
-          <path>
-            Ranging from discounts, free Merch items as well as early access to
-            future limited collaboration mints and even $sol give-aways
-          </path>
+          <p>
+          Ranging from discounts, free Merch items as well as early access to
+           future limited collaboration mints and even $sol give-aways
+          </p>
         </Des>
         <Des elevation={2}>
           <LogoAligner>
             <img src='HEADER.png' alt=''></img>
             <GoldTitle>500 Solana GIVE-BACK Contests to Our Members</GoldTitle>
-          </LogoAligner>
-          <p>
-            <ul>
-              <li>100 Solana donated to Charity</li>
-              <li>100 Solana Grand Prize</li>
-              <li>150 Solana Divided between 3 winners at 50 Solana each</li>
-              <li>100 Solana Divided between 4 winners at 25 Solana each</li>
-              <li>50 Solana Divided between 5 winners at 10 Solana each</li>
-            </ul>
-          </p>
-        </Des>
+         </LogoAligner>
+           <p>
+             <ul>
+               <li>100 Solana donated to Charity</li>
+               <li>100 Solana Grand Prize</li>
+               <li>150 Solana Divided between 3 winners – 50 Solana each</li>
+               <li>100 Solana Divided between 4 winners – 25 Solana each</li>
+               <li>50 Solana Divided between 5 winners – 10 Solana each</li>
+             </ul>
+           </p>
         <p>
           Throughout our minting period we have selected several milestones
-          to hold contests in order to give back to our members.
-        </p>
-        <p>
+           to hold contests in order to give back to our members.
+          </p>
+          <p>
           These contest and draws will be held in our discord and will be announced
-          to the community over our social platforms and outlined in our roadmap.
-        </p>
-      </DesContainer>
-      <Des elevation={2}>
-        <LogoAligner>
-          <img src='HEADER.png' alt=''></img>
-          <GoldTitle>Sticking to Our Guns</GoldTitle>
-        </LogoAligner>
-        <p>
+           to the community over our social platforms and outlined in our roadmap.
+          </p>
+        </Des>
+        <Des elevation={2}>
+          <LogoAligner>
+            <img src='HEADER.png' alt=''></img>
+            <GoldTitle>Sticking to Our Guns</GoldTitle>
+          </LogoAligner>
+          <p>
           In conclusion, we have no intention of rushing or cutting corners in the process
-          of building our platfrom.We are here to be one of the pioneers in the space.
-        </p>
-        <p>
+           of building our platfrom. We are here to be one of the pioneers in the space. 
+          </p>
+          <p>
           As the ecosystem grows it will go through constant changes and ups and downs,
-          we are prepared to endure and be innovative through out these times while remaining who we are as a brand.
-        </p>
-      </Des>
-    </MintContainer>
-    <Snackbar
-      open={alertState.open}
-      autoHideDuration={6000}
-      onClose={() => setAlertState({ ...alertState, open: false })}>
+           we are prepared to endure and be innovative through out these times while remaining who we are as a brand.
+          </p>
+         </Des>
+      </DesContainer>
+      <Snackbar
+        open={alertState.open}
+        autoHideDuration={6000}
+        onClose={() => setAlertState({ ...alertState, open: false })}>
         <Alert
           onClose={() => setAlertState({ ...alertState, open: false })}
           severity={alertState.severity}>
           {alertState.message}
         </Alert>
-      </Snackbar></>
-    )    
-}   
-    
-    export default Home
+      </Snackbar>
+    </MintContainer>
+  )
+}
+
+export default Home
