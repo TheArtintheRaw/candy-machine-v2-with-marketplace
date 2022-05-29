@@ -106,6 +106,7 @@ const MintContainer = styled.div`
   flex: 1 1 auto;
   flex-wrap: wrap;
   gap: 20px;
+  margin: 10px;
 `
 
 const DesContainer = styled.div`
@@ -113,6 +114,7 @@ const DesContainer = styled.div`
   flex-direction: column;
   flex: 1 1 auto;
   gap: 20px;
+  Margin: 10px;
 `
 
 const Price = styled(Chip)`
@@ -165,6 +167,7 @@ const ShimmerTitle = styled.h1`
 
 const GoldTitle = styled.h2`
   color: var(--title-text-color);
+  text-align: center
 `
 
 const LogoAligner = styled.div`

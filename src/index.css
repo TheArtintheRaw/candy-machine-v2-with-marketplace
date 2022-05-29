@@ -5,8 +5,8 @@
   --main-background-color: #18191a;
   --card-background-color: #161516;
   --card-background-lighter-color: #59ec91;
-  --main-text-color: #f7f6f4;
-  --title-text-color: #feffff;
+  --main-text-color: #f7f4f7;
+  --title-text-color: #000000;
 }
 
 body {
@@ -14,7 +14,7 @@ body {
   background: url('img/background.png');
   background-size: cover; 
 
-  margin: 0;
+  margin-top: 10px;
   font-family: 'Fjalla One', sans-serif;
   font-size:  16px;
   line-height: 1.6;
