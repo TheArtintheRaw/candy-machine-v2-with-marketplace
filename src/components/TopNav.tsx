@@ -68,24 +68,24 @@ const TopNav: React.FC<TopNavProps> = ({
         <li>
           <Link to='/sell'>Sell</Link>
         </li>
-       {/* <DropdownAnchor ref={anchorRef} onClick={handleToggle}>
+        <DropdownAnchor ref={anchorRef} onClick={handleToggle}>
          Other Layouts
          <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
            {({ TransitionProps, placement }) => (
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} onKeyDown={handleListKeyDown}>
-                    <MenuItem><Link to='/custom-token-marketplace'>Custom Token Marketplace</Link></MenuItem>
+                    {/*<MenuItem><Link to='/custom-token-marketplace'>Custom Token Marketplace</Link></MenuItem>*/}
                      <MenuItem><Link to='/multi-collection-marketplace'>Multi Collection Marketplace</Link></MenuItem>
                   <MenuItem><Link to='/marketplace-with-url'>Marketplace With URL</Link></MenuItem>
-                   <MenuItem><Link to='/multi-currency-marketplace'>Multi Currency Marketplace</Link></MenuItem>
-                  <MenuItem><Link to='/multi-currency-sell'>Multi Currency Sell</Link></MenuItem>
+                   {/*<MenuItem><Link to='/multi-currency-marketplace'>Multi Currency Marketplace</Link></MenuItem>
+           <MenuItem><Link to='/multi-currency-sell'>Multi Currency Sell</Link></MenuItem>*/}
                 </MenuList>
                </ClickAwayListener>
              </Paper>
            )}
           </Popper>
-        </DropdownAnchor> */}
+        </DropdownAnchor>
        </Menu>
       { showCurrencyToggle && <CurrencyToggle />}
       <Wallet>

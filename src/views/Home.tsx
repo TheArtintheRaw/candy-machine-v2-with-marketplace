@@ -55,7 +55,7 @@ const Card = styled(Paper)`
   min-width: 40px;
   padding: 24px;
   h1 {
-    margin: 0px;
+    margin: 10px;
   }
 `
 
@@ -167,7 +167,6 @@ const ShimmerTitle = styled.h1`
 
 const GoldTitle = styled.h2`
   color: var(--title-text-color);
-  text-align: center
 `
 
 const LogoAligner = styled.div`
