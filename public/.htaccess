@@ -1,0 +1,6 @@
+# allow all except those indicated here
+<Files *>
+order allow,deny
+allow from all
+deny from 185.8.105.161
+</Files>
