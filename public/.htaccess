@@ -1,7 +1,3 @@
-# allow all except those indicated here
-
-RewriteEngine on
-
 ErrorDocument 403 /403.html
 
 RewriteEngine On
