@@ -4,10 +4,10 @@
 
 :root {
     --main-background-color: #ffffff;
-    --card-background-color: #e9d5e9;
-    --card-background-lighter-color: #91fa9f;
+    --card-background-color: #ffffff54;
+    --card-background-lighter-color: #ffffffa6;
     --main-text-color: #000000;
-    --title-text-color: #5db68c;
+    --title-text-color: #ff97f1;
 }
 
 body {
@@ -20,7 +20,7 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #a1e9aa;
+    background-color: #ffffff;
     color: #000000;
 }
 
