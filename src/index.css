@@ -4,8 +4,8 @@
 
 :root {
     --main-background-color: #ffffff;
-    --card-background-color: #e24ee271;
-    --card-background-lighter-color: #262927;
+    --card-background-color: #e9d5e9;
+    --card-background-lighter-color: #91fa9f;
     --main-text-color: #000000;
     --title-text-color: #5db68c;
 }
@@ -20,8 +20,8 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #303030;
-    color: #FFFFFF;
+    background-color: #a1e9aa;
+    color: #000000;
 }
 
 code {
