@@ -37,7 +37,7 @@ const ConnectButton = styled(WalletMultiButton)`
 
 const NFT = styled(Paper)`
   min-width: 500px;
-  padding: 5px 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
   flex: 1 1 auto;
   background-color: var(--card-background-color) !important;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
@@ -592,12 +592,10 @@ const Home = (props: HomeProps) => {
             <GoldTitle>Ghostlife Club</GoldTitle>
           </LogoAligner>
           <p>
-            Minting a Soltergeist will grant you an exclusive membership
-             to everything Ghostlife Club has to offer.
+            Holding the Ghostlife Club SOLtergeists NFT will make you eligible to gain Spirit/$SPRT through weekly holder snapshot/airdrop.
           </p>
           <p>
-          Ranging from discounts, free Merch items as well as early access to
-           future limited collaboration mints and even $sol give-aways
+          Discounts, free Merch items, early access to future limited collaboration mints and even $SOL raffle tickets will be available for purchase with your acquired Spirit 
           </p>
         </Des>
         <Des elevation={2}>
@@ -630,7 +628,7 @@ const Home = (props: HomeProps) => {
           </LogoAligner>
           <p>
           In conclusion, we have no intention of rushing or cutting corners in the process
-           of building our platfrom. We are here to be one of the pioneers in the space. 
+           of building our platform. We are here to be one of the pioneers in the space. 
           </p>
           <p>
           As the ecosystem grows it will go through constant changes and ups and downs,
