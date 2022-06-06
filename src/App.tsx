@@ -1,12 +1,10 @@
-import { createTheme, ThemeProvider } from "@material-ui/core";
-import { useMemo } from "react";
-import {
-  ConnectionProvider,
-  WalletProvider,
-} from "@solana/wallet-adapter-react";
-import * as anchor from "@project-serum/anchor";
-import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
-import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
+import { ThemeProvider } from '@material-ui/styles'
+import { createTheme } from '@material-ui/core'
+import { useMemo } from 'react'
+import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react'
+import * as anchor from '@project-serum/anchor'
+import { WalletAdapterNetwork } from '@solana/wallet-adapter-base'
+import { WalletModalProvider } from '@solana/wallet-adapter-react-ui'
 import {
   getPhantomWallet,
   getSlopeWallet,
@@ -17,64 +15,92 @@ import {
   getSolongWallet,
   getLedgerWallet,
   getSafePalWallet,
-} from "@solana/wallet-adapter-wallets";
-import { Route, Routes } from "react-router-dom";
-import styled from "styled-components";
-import TopNav from "./components/TopNav";
-import { CurrencyProvider } from "./components/Currency";
-import Home from "./views/Home";
-import Marketplace from "./views/Marketplace";
-import MyCollection from "./views/MyCollection";
-import SingleOrder from "./views/SingleOrder";
+} from '@solana/wallet-adapter-wallets'
+import { Route, Routes } from 'react-router-dom'
+import styled from 'styled-components'
 
-require("@solana/wallet-adapter-react-ui/styles.css");
+import TopNav from './components/TopNav'
+import { CurrencyProvider } from './components/Currency'
+import Home from './views/Home'
+import Marketplace from './views/Marketplace'
+import MarketplaceWithFilter from './views/MarketplaceWithFilter'
+import MarketplaceWithUrl from './views/MarketplaceWithUrl'
 
-const candyMachineId = new anchor.web3.PublicKey(
-  process.env.REACT_APP_CANDY_MACHINE_ID!
-);
-const network = process.env.REACT_APP_SOLANA_NETWORK as WalletAdapterNetwork;
-const rpcHost = process.env.REACT_APP_SOLANA_RPC_HOST!;
-const connection = new anchor.web3.Connection(rpcHost);
+import MyCollection from './views/MyCollection'
+import SingleOrder from './views/SingleOrder'
+/*import CustomTokenMarketplace from './views/CustomTokenMarketplace'
+import MultiCurrencyMarketplace from './views/MultiCurrencyMarketplace'
+import MultiCurrencySell from './views/MultiCurrencySell'*/
 
+require('@solana/wallet-adapter-react-ui/styles.css')
 
+const candyMachineId = new anchor.web3.PublicKey(process.env.REACT_APP_CANDY_MACHINE_ID!)
+const network = process.env.REACT_APP_SOLANA_NETWORK as WalletAdapterNetwork
+const rpcHost = process.env.REACT_APP_SOLANA_RPC_HOST!
+const connection = new anchor.web3.Connection(rpcHost)
 
-const txTimeout = 30000; // milliseconds (confirm this works for your project)
+const txTimeout = 30000 // milliseconds (confirm this works for your project)
 
 const theme = createTheme({
   palette: {
-    type: "dark",
+    primary: {
+      // light: will be calculated from palette.primary.main,
+      main: '#ff4400',
+      // dark: will be calculated from palette.primary.main,
+      // contrastText: will be calculated to contrast with palette.primary.main
+    },
+    secondary: {
+      light: '#0066ff',
+      main: '#0044ff',
+      // dark: will be calculated from palette.secondary.main,
+      contrastText: '#ffcc00',
+    },
+    // Used by `getContrastText()` to maximize the contrast between
+    // the background and the text.
+    contrastThreshold: 3,
+    // Used by the functions below to shift a color's luminance by approximately
+    // two indexes within its tonal palette.
+    // E.g., shift from Red 500 to Red 300 or Red 700.
+    tonalOffset: 0.2,
   },
   overrides: {
     MuiButtonBase: {
       root: {
-        justifyContent: "flex-start",
+        justifyContent: 'flex-start',
       },
     },
-    MuiButton: {
-      root: {
-        textTransform: undefined,
-        padding: "12px 16px",
-      },
-      startIcon: {
-        marginRight: 8,
-      },
-      endIcon: {
-        marginLeft: 8,
-      },
+  MuiButton: {
+    root: {
+      textTransform: undefined,
+      padding: '12px 16px',
+    },
+    startIcon: {
+      marginRight: 8,
+    },
+    endIcon: {
+      marginLeft: 8,
     },
   },
+},
 });
 
 // Used for a multi-currency shop
 const currencyOptions = [
   {
-    currencySymbol: "SOL",
-    treasuryMint: "So11111111111111111111111111111111111111112",
+    currencySymbol: 'SOL',
+    treasuryMint: 'So11111111111111111111111111111111111111112',
     currencyDecimals: 9,
     priceDecimals: 3,
-    volumeDecimals: 1,
+    volumeDecimals: 1
   },
-];
+    {
+      currencySymbol: 'SPRT',
+      treasuryMint: 'GosCFTFRVSry5EnGY5g2SXAfHhF5htLnuGWe6kcKHGCc',
+      currencyDecimals: 0,
+      priceDecimals: 2,
+      volumeDecimals: 1
+    }
+  ];
 
 const App = () => {
   // @solana/wallet-adapter-wallets includes all the adapters but supports tree shaking and lazy loading --
@@ -85,7 +111,7 @@ const App = () => {
       getPhantomWallet(),
       getSlopeWallet(),
       getSolflareWallet(),
-      getSolflareWebWallet({ network }),
+      getSolflareWebWallet(),
       getSolletWallet({ network }),
       getSolletExtensionWallet({ network }),
       getSolongWallet(),
@@ -93,7 +119,7 @@ const App = () => {
       getSafePalWallet(),
     ],
     []
-  );
+  )
 
   return (
     <ThemeProvider theme={theme}>
@@ -105,8 +131,8 @@ const App = () => {
                 <MainContainer>
                   <Routes>
                     <Route
-                      path="/"
-                      element={
+                      path='/'
+                      element={(
                         <>
                           <TopNav />
                           <Home
@@ -116,28 +142,28 @@ const App = () => {
                             rpcHost={rpcHost}
                           />
                         </>
-                      }
+                      )}
                     />
                     <Route
-                      path="/marketplace/:tokenMint"
-                      element={
+                      path='/marketplace/:tokenMint'
+                      element={(
                         <>
                           <TopNav />
                           <SingleOrder />
                         </>
-                      }
+                      )}
                     />
                     <Route
-                      path="/marketplace"
-                      element={
+                      path='/marketplace'
+                      element={(
                         <>
                           <TopNav />
                           <Marketplace />
                         </>
-                      }
+                      )}
                     />
                     <Route
-                      path="/sell"
+                      path='/sell'
                       element={
                         <>
                           <TopNav />
@@ -145,6 +171,51 @@ const App = () => {
                         </>
                       }
                     />
+                    {/*<Route
+                      path='/custom-token-marketplace'
+                      element={
+                        <>
+                          <TopNav />
+                          <CustomTokenMarketplace />
+                        </>
+                      }
+                    />*/}
+                    <Route
+                      path='/multi-collection-marketplace'
+                      element={
+                        <>
+                          <TopNav />
+                          <MarketplaceWithFilter />
+                        </>
+                      }
+                    />
+                    <Route
+                      path='/marketplace-with-url'
+                      element={
+                        <>
+                          <TopNav />
+                          <MarketplaceWithUrl />
+                        </>
+                      }
+                    />
+                    {/*<Route
+                      path='/multi-currency-marketplace'
+                      element={
+                        <>
+                          <TopNav showCurrencyToggle={true} />
+                          <MultiCurrencyMarketplace />
+                        </>
+                      }
+                    />
+                    <Route
+                      path='/multi-currency-sell'
+                      element={
+                        <>
+                          <TopNav showCurrencyToggle={true} />
+                          <MultiCurrencySell />
+                        </>
+                      }
+                    />*/}
                   </Routes>
                 </MainContainer>
               </main>
@@ -153,8 +224,8 @@ const App = () => {
         </WalletProvider>
       </ConnectionProvider>
     </ThemeProvider>
-  );
-};
+  )
+}
 
 const MainContainer = styled.div`
   display: flex;
@@ -166,6 +237,6 @@ const MainContainer = styled.div`
   margin-left: 4%;
   text-align: center;
   justify-content: center;
-`;
+`
 
-export default App;
+export default App

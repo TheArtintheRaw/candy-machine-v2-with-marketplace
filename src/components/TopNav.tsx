@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 import { Link } from 'react-router-dom'
@@ -54,7 +53,7 @@ const TopNav: React.FC<TopNavProps> = ({
   return (
     <HeaderBar>
       <Logo>
-        <Link to='/'>
+        <Link to='https://ghostlifeclub.com'>
           <img alt='' src='/HEADER.png' />
         </Link>
       </Logo>
@@ -68,24 +67,24 @@ const TopNav: React.FC<TopNavProps> = ({
         <li>
           <Link to='/sell'>Sell</Link>
         </li>
-        {/*<DropdownAnchor ref={anchorRef} onClick={handleToggle}>
+        <DropdownAnchor ref={anchorRef} onClick={handleToggle}>
          Other Layouts
          <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
            {({ TransitionProps, placement }) => (
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} onKeyDown={handleListKeyDown}>
-           <MenuItem><Link to='/custom-token-marketplace'>Custom Token Marketplace</Link></MenuItem>
-                     <Link to='/multi-collection-marketplace'>Multi Collection Marketplace</Link>
-                     <MenuItem><Link to='/marketplace-with-url'>Marketplace With URL</Link></MenuItem>
-                   <MenuItem><Link to='/multi-currency-marketplace'>Multi Currency Marketplace</Link></MenuItem>
-           <MenuItem><Link to='/multi-currency-sell'>Multi Currency Sell</Link></MenuItem>
+                    {/*<MenuItem><Link to='/custom-token-marketplace'>Custom Token Marketplace</Link></MenuItem>*/}
+                    <MenuItem><Link to='/multi-collection-marketplace'>Multi Collection Marketplace</Link></MenuItem>
+                    <MenuItem><Link to='/marketplace-with-url'>Marketplace With URL</Link></MenuItem>
+                    {/*<MenuItem><Link to='/multi-currency-marketplace'>Multi Currency Marketplace</Link></MenuItem>
+                    <MenuItem><Link to='/multi-currency-sell'>Multi Currency Sell</Link></MenuItem>*/}
                 </MenuList>
                </ClickAwayListener>
              </Paper>
            )}
           </Popper>
-        </DropdownAnchor>*/}
+        </DropdownAnchor>
        </Menu>
       { showCurrencyToggle && <CurrencyToggle />}
       <Wallet>
@@ -134,34 +133,33 @@ const DropdownAnchor = styled.li`
   }
 `
 
- const WalletAmount = styled.div`
-  
-  color: black;
-   width: auto;
-   padding: 5px 5px 5px 16px;
-   min-width: 48px;
-   min-height: auto;
-   border-radius: 22px;
-   background-color: var(--main-text-color);
-   box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%),
-     0px 1px 18px 0px rgb(0 0 0 / 12%);
-  box-sizing: border-box;
-   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-   font-weight: 500;
-   line-height: 1.75;
-   text-transform: uppercase;
-   border: 0;
-  margin: 0;
-   display: inline-flex;
-   outline: 0;
-   position: relative;
-   align-items: center;
-   user-select: none;
-   vertical-align: middle;
-   justify-content: flex-start;
-   gap: 10px;
-`
+// const WalletAmount = styled.div`
+//   color: black;
+//   width: auto;
+//   padding: 5px 5px 5px 16px;
+//   min-width: 48px;
+//   min-height: auto;
+//   border-radius: 22px;
+//   background-color: var(--main-text-color);
+//   box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%),
+//     0px 1px 18px 0px rgb(0 0 0 / 12%);
+//   box-sizing: border-box;
+//   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+//     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+//   font-weight: 500;
+//   line-height: 1.75;
+//   text-transform: uppercase;
+//   border: 0;
+//   margin: 0;
+//   display: inline-flex;
+//   outline: 0;
+//   position: relative;
+//   align-items: center;
+//   user-select: none;
+//   vertical-align: middle;
+//   justify-content: flex-start;
+//   gap: 10px;
+// `
 
 const Wallet = styled.ul`
   flex: 0 0 auto;
