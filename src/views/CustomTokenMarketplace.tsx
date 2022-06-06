@@ -26,8 +26,8 @@ const CustomTokenMarketplace: React.FC = () => {
       NETWORK,
       // pass additional settings param to configure shop display
       {
-        currencySymbol: 'LQN',
-        currencyDecimals: 9,
+        currencySymbol: 'SPRT',
+        currencyDecimals: 0,
         priceDecimals: 3,
         volumeDecimals: 1
       }
