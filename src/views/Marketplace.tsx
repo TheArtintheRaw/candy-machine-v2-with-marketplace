@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { CandyShop } from '@liqnft/candy-shop-sdk'
-import { Orders, Stat } from '@liqnft/candy-shop'
+import { Orders, Stat, OrderDetail } from '@liqnft/candy-shop'
 import { useAnchorWallet } from '@solana/wallet-adapter-react'
 import { PublicKey, Cluster } from '@solana/web3.js'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
@@ -39,6 +39,13 @@ const Marketplace: React.FC = () => {
         wallet={wallet}
         candyShop={candyShopRef.current}
         walletConnectComponent={<WalletMultiButton />}
+      />
+      <OrderDetail
+        tokenMint={'WfL9fAggBMHmjvBEu1v53fQkRmB3Cn4giJSSQxVSC5W'} // token mint of the NFT
+        backUrl={'/'} // will redirect to this route after sale is completed
+        candyShop={candyShopRef.current}
+        walletConnectComponent={<WalletMultiButton />}
+        wallet={wallet}
       />
     </DesContainer>
   )
