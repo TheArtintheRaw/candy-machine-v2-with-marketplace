@@ -75,9 +75,9 @@ const TopNav: React.FC<TopNavProps> = ({
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} onKeyDown={handleListKeyDown}>
-           <MenuItem><Link to='/custom-token-marketplace'>Custom Token Marketplace</Link></MenuItem>*/}
-                     <li><Link to='/multi-collection-marketplace'>Multi Collection Marketplace</Link></li>
-                  {/*<MenuItem><Link to='/marketplace-with-url'>Marketplace With URL</Link></MenuItem>
+           <MenuItem><Link to='/custom-token-marketplace'>Custom Token Marketplace</Link></MenuItem>
+                     <Link to='/multi-collection-marketplace'>Multi Collection Marketplace</Link>
+                     <MenuItem><Link to='/marketplace-with-url'>Marketplace With URL</Link></MenuItem>
                    <MenuItem><Link to='/multi-currency-marketplace'>Multi Currency Marketplace</Link></MenuItem>
            <MenuItem><Link to='/multi-currency-sell'>Multi Currency Sell</Link></MenuItem>
                 </MenuList>
