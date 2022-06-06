@@ -4,7 +4,6 @@ import Alert from '@material-ui/lab/Alert'
 import * as anchor from '@project-serum/anchor'
 import { useAnchorWallet } from '@solana/wallet-adapter-react'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
-
 import { LAMPORTS_PER_SOL, PublicKey } from '@solana/web3.js'
 import confetti from 'canvas-confetti'
 import { useEffect, useState } from 'react'

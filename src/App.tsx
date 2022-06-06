@@ -20,7 +20,6 @@ import {
 } from "@solana/wallet-adapter-wallets";
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
-
 import TopNav from "./components/TopNav";
 import { CurrencyProvider } from "./components/Currency";
 import Home from "./views/Home";
