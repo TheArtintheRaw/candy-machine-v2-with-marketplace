@@ -2,12 +2,13 @@ import React from 'react'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 import { Link } from 'react-router-dom'
 import { useAnchorWallet } from '@solana/wallet-adapter-react'
+import CurrencyToggle from './CurrencyToggle'
+/*import Paper from '@material-ui/core/Paper'
+import Popper from '@material-ui/core/Popper'
 import MenuItem from '@material-ui/core/MenuItem'
 import MenuList from '@material-ui/core/MenuList'
-import ClickAwayListener from '@material-ui/core/ClickAwayListener'
-import CurrencyToggle from './CurrencyToggle'
-import Paper from '@material-ui/core/Paper'
-import Popper from '@material-ui/core/Popper'
+import ClickAwayListener from '@material-ui/core/ClickAwayListener'*/
+
 import styled from 'styled-components'
 
 interface TopNavProps {
