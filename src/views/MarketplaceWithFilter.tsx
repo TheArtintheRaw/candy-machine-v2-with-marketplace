@@ -36,7 +36,7 @@ const MarketplaceWithFilter: React.FC = () => {
       <Stat
         candyShop={candyShopRef.current}
         title={'Marketplace'}
-        description={'Allow users to filter by NFT collection. Configure which NFTs collections to enable in My Shop.'}
+        description={''}
         style={{ paddingBottom: 50 }}
       />
       <Orders
