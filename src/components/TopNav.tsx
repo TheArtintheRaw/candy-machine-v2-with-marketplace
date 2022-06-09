@@ -54,7 +54,7 @@ const TopNav: React.FC<TopNavProps> = ({
   return (
     <HeaderBar>
       <Logo>
-        <Link to='https://ghostlifeclub.com'>
+        <Link to='/'>
           <img alt='' src='/HEADER.png' />
         </Link>
       </Logo>
