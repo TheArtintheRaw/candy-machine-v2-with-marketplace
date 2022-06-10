@@ -591,10 +591,10 @@ const Home = (props: HomeProps) => {
             <GoldTitle>Ghostlife Club</GoldTitle>
           </LogoAligner>
           <p>
-            Holding the Ghostlife Club SOLtergeists NFT will make you eligible to gain Spirit/$SPRT through weekly holder snapshot/airdrop.
+            Staking the Ghostlife Club SOLtergeists NFT will make you eligible to gain Spirit/$SPRT.
           </p>
           <p>
-          Discounts, free Merch items, early access to future limited collaboration mints and even $SOL raffle tickets will be available for purchase with your acquired Spirit 
+          Discounts, free Merch items, early access to future limited collaboration mints and even raffle tickets for NFTs/Merch/and more will be available for purchase with your acquired Spirit 
           </p>
         </Des>
         <Des elevation={2}>
