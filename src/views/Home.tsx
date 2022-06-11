@@ -473,6 +473,13 @@ const Home = (props: HomeProps) => {
       <DesContainer>
         <NFT elevation={3}>
           <ShimmerTitle>MINT IS LIVE!</ShimmerTitle>
+          <CrossmintPayButton
+            collectionTitle='GLC SOLtergeists'
+            collectionDescription='Ghostlife Club SOLtergeists collection of 4444 NFTs granting membership and exclusive staking rights to our $pirit coin'
+            collectionPhoto='https://ghostlifeclub.mypinata.cloud/ipfs/QmSj9GspiAg2mVgkDxxSqdMEuQWwt1v6DWH68BMjeTQRNr'
+            clientId='b455eca8-b053-4746-abb2-c18ae90ea059'
+            mintConfig={{'type':'candy-machine'}}
+            />
           <h2>Ghostlife Club #SOLtergeists</h2>
           <br />
           <div>
@@ -577,13 +584,6 @@ const Home = (props: HomeProps) => {
             ) : (
               <h1>Mint is private.</h1>
             )}
-            <CrossmintPayButton
-            collectionTitle='GLC SOLtergeists'
-            collectionDescription='Ghostlife Club SOLtergeists collection of 4444 NFTs granting membership and exclusive staking rights to our $pirit coin'
-            collectionPhoto='https://ghostlifeclub.mypinata.cloud/ipfs/QmSj9GspiAg2mVgkDxxSqdMEuQWwt1v6DWH68BMjeTQRNr'
-            clientId='b455eca8-b053-4746-abb2-c18ae90ea059'
-            mintConfig={{'type':'candy-machine'}}
-            />
           </MintButtonContainer>
           <br />
           {wallet && isActive && solanaExplorerLink && (
