@@ -573,24 +573,24 @@ const Home = (props: HomeProps) => {
                   isSoldOut={isSoldOut}
                   onMint={onMint}
                 />
-              )
+                )
             ) : (
               <h1>Mint is private.</h1>
             )}
+            <CrossmintPayButton
+            collectionTitle='GLC SOLtergeists'
+            collectionDescription='Ghostlife Club SOLtergeists collection of 4444 NFTs granting membership and exclusive staking rights to our $pirit coin'
+            collectionPhoto='https://ghostlifeclub.mypinata.cloud/ipfs/QmSj9GspiAg2mVgkDxxSqdMEuQWwt1v6DWH68BMjeTQRNr'
+            clientId='b455eca8-b053-4746-abb2-c18ae90ea059'
+            mintConfig={{'type':'candy-machine'}}
+            />
           </MintButtonContainer>
           <br />
           {wallet && isActive && solanaExplorerLink && (
             <SolExplorerLink href={solanaExplorerLink} target='_blank'>
               View on Solscan
             </SolExplorerLink>
-          )};
-          <CrossmintPayButton
-                collectionTitle='GLC SOLtergeists'
-                collectionDescription='Ghostlife Club SOLtergeists collection of 4444 NFTs granting membership and exclusive staking rights to our $pirit coin'
-                collectionPhoto='https://ghostlifeclub.mypinata.cloud/ipfs/QmSj9GspiAg2mVgkDxxSqdMEuQWwt1v6DWH68BMjeTQRNr'
-                clientId='b455eca8-b053-4746-abb2-c18ae90ea059'
-                mintConfig={{'type':'candy-machine'}}
-                />
+          )}
         </NFT>
       </DesContainer>
       <DesContainer>
