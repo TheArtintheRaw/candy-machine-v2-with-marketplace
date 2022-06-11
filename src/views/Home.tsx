@@ -18,6 +18,7 @@ import {
 } from '../utils/candy-machine'
 import { MintButton } from '../components/MintButton'
 import { AlertState, getAtaForMint, toDate } from '../utils/utils'
+import { CrossmintPayButton } from '@crossmint/client-sdk-react-ui'
 
 const cluster = process.env.REACT_APP_SOLANA_NETWORK!.toString()
 const decimals = process.env.REACT_APP_SPL_TOKEN_TO_MINT_DECIMALS
@@ -57,6 +58,7 @@ const Card = styled(Paper)`
     margin: 10px;
   }
 `
+
 
 const MintButtonContainer = styled.div`
   button.MuiButton-contained:not(.MuiButton-containedPrimary).Mui-disabled {
@@ -581,7 +583,14 @@ const Home = (props: HomeProps) => {
             <SolExplorerLink href={solanaExplorerLink} target='_blank'>
               View on Solscan
             </SolExplorerLink>
-          )}
+          )};
+          <CrossmintPayButton
+                collectionTitle='GLC SOLtergeists'
+                collectionDescription='Ghostlife Club SOLtergeists collection of 4444 NFTs granting membership and exclusive staking rights to our $pirit coin'
+                collectionPhoto='https://ghostlifeclub.mypinata.cloud/ipfs/QmSj9GspiAg2mVgkDxxSqdMEuQWwt1v6DWH68BMjeTQRNr'
+                clientId='b455eca8-b053-4746-abb2-c18ae90ea059'
+                mintConfig={{'type':'candy-machine'}}
+                />
         </NFT>
       </DesContainer>
       <DesContainer>
