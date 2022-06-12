@@ -597,7 +597,7 @@ const Home = (props: HomeProps) => {
         <Des elevation={2}>
           <LogoAligner>
             <img src='HEADER.png' alt=''></img>
-            <GoldTitle>Ghostlife Club</GoldTitle>
+            <GoldTitle>GLC Spirit</GoldTitle>
           </LogoAligner>
           <p>
             Staking the Ghostlife Club SOLtergeists NFT will make you eligible to gain Spirit/$SPRT.
@@ -626,7 +626,8 @@ const Home = (props: HomeProps) => {
           </p>
           <p>
           These contest and draws will be held in our discord and will be announced
-           to the community over our social platforms and outlined in our roadmap.
+           to the community over
+           - our social platforms and outlined in our roadmap.
           </p>
         </Des>
         <Des elevation={2}>
