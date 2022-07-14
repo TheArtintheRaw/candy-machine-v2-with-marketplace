@@ -3,11 +3,11 @@ import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 import { Link } from 'react-router-dom'
 import { useAnchorWallet } from '@solana/wallet-adapter-react'
 import CurrencyToggle from './CurrencyToggle'
-/*import Paper from '@material-ui/core/Paper'
+import Paper from '@material-ui/core/Paper'
 import Popper from '@material-ui/core/Popper'
 import MenuItem from '@material-ui/core/MenuItem'
 import MenuList from '@material-ui/core/MenuList'
-import ClickAwayListener from '@material-ui/core/ClickAwayListener'*/
+import ClickAwayListener from '@material-ui/core/ClickAwayListener'
 
 import styled from 'styled-components'
 
@@ -23,25 +23,24 @@ const TopNav: React.FC<TopNavProps> = ({
   const [open, setOpen] = React.useState(false)
   const anchorRef = React.useRef<HTMLLIElement>(null)
 
-  // const handleToggle = () => {
-  //   setOpen((prevOpen) => !prevOpen);
-  // };
+  const handleToggle = () => {
+    setOpen((prevOpen) => !prevOpen);
+  };
 
-  // const handleClose = (event: any) => {
-  //   if (anchorRef?.current && (anchorRef.current as any).contains(event.target)) {
-  //     return;
-  //   }
-  //   setOpen(false);
-  // };
+  const handleClose = (event: any) => {
+    if (anchorRef?.current && (anchorRef.current as any).contains(event.target)) {
+      return;
+    }
+    setOpen(false);
+  };
 
-  // function handleListKeyDown(event: any) {
-  //   if (event.key === 'Tab') {
-  //     event.preventDefault();
-  //     setOpen(false);
-  //   }
-  // }
+  function handleListKeyDown(event: any) {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      setOpen(false);
+    }
+  }
 
-  // return focus to the button when we transitioned from !open -> open
   const prevOpen = React.useRef(open);
   React.useEffect(() => {
     if (prevOpen.current === true && open === false) {
@@ -71,24 +70,23 @@ const TopNav: React.FC<TopNavProps> = ({
         <li>
           <a href ='https://stake.cardinal.so/glc'>Staking</a>
           </li>
-        {/*<DropdownAnchor ref={anchorRef} onClick={handleToggle}>
+        <DropdownAnchor ref={anchorRef} onClick={handleToggle}>
          Other Layouts
          <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
            {({ TransitionProps, placement }) => (
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} onKeyDown={handleListKeyDown}>
-                    <MenuItem><Link to='/custom-token-marketplace'>Custom Token Marketplace</Link></MenuItem>
-                    <MenuItem><Link to='/multi-collection-marketplace'>Multi Collection Marketplace</Link></MenuItem>
-                    <MenuItem><Link to='/marketplace-with-url'>Marketplace With URL</Link></MenuItem>
-                    <MenuItem><Link to='/multi-currency-marketplace'>Multi Currency Marketplace</Link></MenuItem>
-                    <MenuItem><Link to='/multi-currency-sell'>Multi Currency Sell</Link></MenuItem>
-                </MenuList>
+                    <MenuItem><Link to='/'>Home</Link></MenuItem>
+                    <MenuItem><Link to='/marketplace'>Marketplace</Link></MenuItem>
+                    <MenuItem><Link to='/sell'>Sell</Link></MenuItem>
+                    <MenuItem><a href ='https://stake.cardinal.so/glc'>Staking</a></MenuItem>
+                    </MenuList>
                </ClickAwayListener>
              </Paper>
            )}
           </Popper>
-        </DropdownAnchor>*/}
+        </DropdownAnchor>
        </Menu>
       { showCurrencyToggle && <CurrencyToggle />}
       <Wallet>
@@ -111,31 +109,31 @@ const HeaderBar = styled.div`
   margin-bottom: 30px;
 `
 
-// const DropdownAnchor = styled.li`
-  // cursor: pointer;
+const DropdownAnchor = styled.li`
+ cursor: pointer;
 
-  // &:hover {
-  //   color: rgb(131,146,161);
-  // }
+  &:hover {
+    color: rgb(131,146,161);
+  }
 
-  // > div {
-  //   z-index: 1000;
-  // }
+  > div {
+    z-index: 1000;
+  }
 
-  // .MuiList-root {
-  //   margin-top: 15px;
+.MuiList-root {
+    margin-top: 15px;
 
-  //   a {
-  //     padding-top: 4px;
-  //     padding-bottom: 4px;
+   a {
+     padding-top: 4px;
+     padding-bottom: 4px;
 
-  //     &:hover {
-  //       border-bottom: 0px;
-  //       color: #fff;
-      // }
-    // }
-  // }
-// `
+     &:hover {
+       border-bottom: 0px;
+       color: #fff;
+     }
+    }
+  }
+`
 
 // const WalletAmount = styled.div`
 //   color: black;

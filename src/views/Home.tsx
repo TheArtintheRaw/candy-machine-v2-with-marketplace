@@ -36,11 +36,13 @@ const ConnectButton = styled(WalletMultiButton)`
 `;
 
 const NFT = styled(Paper)`
-    min-width: 500px;
-    padding: 0px 20px 20px 20px;
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
     flex: 1 1 auto;
     background-color: var(--card-background-color) !important;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
+    justify-items: center;
 `;
 
 const Des = styled(NFT)`
@@ -53,7 +55,9 @@ const Card = styled(Paper)`
     background-color: var(card-background-lighter-color) !important;
     margin: 5px;
     min-width: 40px;
-    padding: 24px;
+    max-width: 90%;
+    padding: 24px 24px;
+    justify-content: center;
     h1 {
         margin: 10px;
     }
@@ -73,13 +77,13 @@ const MintButtonContainer = styled.div`
 
     @-webkit-keyframes pulse {
         0% {
-            box-shadow: 0 0 0 0 #ef8f6e;
+            box-shadow: 0 0 0 0 #1cff95;
         }
     }
 
     @keyframes pulse {
         0% {
-            box-shadow: 0 0 0 0 #ef8f6e;
+            box-shadow: 0 0 0 0 #1cff95;
         }
     }
 `;
@@ -105,30 +109,40 @@ const MintContainer = styled.div`
     flex-direction: row;
     flex: 1 1 auto;
     flex-wrap: wrap;
-    gap: 20px;
-    margin: 10px;
+    gap: 50px;
+    margin: auto;
+    max-width: 95%;
+    max-height: 95%;
+    justify-content: center;
 `;
 
 const DesContainer = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
-    gap: 20px;
+    gap: 50px;
     margin: 10px;
+    max-width: 90%;
+    max-height: 90%;
 `;
 
 const Price = styled(Chip)`
     position: absolute;
     margin: 5px;
-    font-weight: bold;
-    font-size: 1.2em !important;
-    font-family: 'Patrick Hand', cursive !important;
+    font-weight: 1000;
+    font-size: 1.2rem !important;
+    font-family: 'Playfair', cursive !important;
 `;
 
 const Image = styled.img`
-    height: 400px;
-    width: auto;
-    border-radius: 7px;
+    width: 90%;
+    height: 90%;
+    display: flex block;
+
+    max-width: 500px;
+    max-height: 500px;
+
+    border-radius: 25px;
     box-shadow: 5px 5px 40px 5px rgba(0, 0, 0, 0.5);
 `;
 
@@ -171,7 +185,19 @@ const ShimmerTitle = styled.h1`
 `;
 
 const GoldTitle = styled.h2`
+    margin: 20px auto;
+    text-transform: uppercase;
+    animation: glow 2s ease-in-out infinite alternate;
     color: var(--title-text-color);
+    @keyframes glow {
+        from {
+            text-shadow: 0 0 20px var(--main-text-color);
+        }
+        to {
+            text-shadow: 0 0 30px var(--title-text-color),
+                0 0 10px var(--title-text-color);
+        }
+    }
 `;
 
 const LogoAligner = styled.div`
@@ -180,6 +206,7 @@ const LogoAligner = styled.div`
 
     img {
         max-height: 35px;
+        max-width: 35px;
         margin-right: 10px;
     }
 `;
@@ -354,17 +381,17 @@ const Home = (props: HomeProps) => {
     }: any) => {
         return (
             <div>
-                <Card elevation={1}>
+                <Card elevation={3}>
                     <h1>{days}</h1>Days
                 </Card>
-                <Card elevation={1}>
+                <Card elevation={3}>
                     <h1>{hours}</h1>
                     Hours
                 </Card>
-                <Card elevation={1}>
+                <Card elevation={3}>
                     <h1>{minutes}</h1>Mins
                 </Card>
-                <Card elevation={1}>
+                <Card elevation={3}>
                     <h1>{seconds}</h1>Secs
                 </Card>
             </div>
@@ -419,7 +446,7 @@ const Home = (props: HomeProps) => {
     function throwConfetti(): void {
         confetti({
             particleCount: 400,
-            spread: 70,
+            spread: 200,
             origin: { y: 0.6 },
         });
     }
@@ -515,7 +542,7 @@ const Home = (props: HomeProps) => {
             <DesContainer>
                 <NFT elevation={3}>
                     <ShimmerTitle>MINT IS LIVE!</ShimmerTitle>
-                    <h2>Ghostlife Club #SOLtergeists</h2>
+                    <h2>The Ghostlife Club #SOLtergeists</h2>
                     <br />
                     <div>
                         <Price
@@ -527,7 +554,7 @@ const Home = (props: HomeProps) => {
                                     : price + ' ' + priceLabel
                             }
                         />
-                        <Image src='cool-cats.gif' alt='NFT To Mint' />
+                        <Image src='cool-cats.gif' alt='The SOLtergeists' />
                     </div>
                     <br />
                     {wallet &&
@@ -640,9 +667,10 @@ const Home = (props: HomeProps) => {
                             <h1>Mint is private.</h1>
                         )}
                         <br />
+                        <CrossmintButton />
+                        <br />
                     </MintButtonContainer>
-                    <CrossmintButton />
-                    <br />
+
                     <br />
                     {wallet && isActive && solanaExplorerLink && (
                         <SolExplorerLink
@@ -678,23 +706,26 @@ const Home = (props: HomeProps) => {
                         </GoldTitle>
                     </LogoAligner>
                     <p>
-                        <ul>
-                            <li>
-                                Magic Eden -
-                                https://magiceden.io/marketplace/theglc
-                            </li>
-                            <li>
-                                OpenSea - https://opensea.io/collection/theglc
-                            </li>
-                            <li>
-                                Solanart -
-                                https://solanart.io/collections/theglc
-                            </li>
-                            <li>
-                                Solsea -
-                                https://solsea.io/c/6299c27721e9db08e0cf6162
-                            </li>
-                        </ul>
+                        Magic Eden -{' '}
+                        <a href='https://magiceden.io/marketplace/theglc'>
+                            https://magiceden.io/marketplace/theglc
+                        </a>
+                        <br />
+                        OpenSea -{' '}
+                        <a href='https://opensea.io/collection/theglc'>
+                            https://opensea.io/collection/theglc
+                        </a>
+                        <br />
+                        Solanart -{' '}
+                        <a href='https://solanart.io/collections/theglc'>
+                            https://solanart.io/collections/theglc
+                        </a>
+                        <br />
+                        Solsea -{' '}
+                        <a href='https//solsea.io/c/6299c27721e9db08e0cf6162'>
+                            https://solsea.io/c/6299c27721e9db08e0cf6162
+                        </a>
+                        <br />
                     </p>
                 </Des>
                 <Des elevation={2}>

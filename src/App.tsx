@@ -230,13 +230,14 @@ const App = () => {
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  padding-bottom: 4%;
   margin-right: 4%;
   margin-left: 4%;
   text-align: center;
   justify-content: center;
-`
+
+`;
 
 export default App
