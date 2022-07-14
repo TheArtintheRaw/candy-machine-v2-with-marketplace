@@ -23,23 +23,23 @@ const TopNav: React.FC<TopNavProps> = ({
   const [open, setOpen] = React.useState(false)
   const anchorRef = React.useRef<HTMLLIElement>(null)
 
-  const handleToggle = () => {
-    setOpen((prevOpen) => !prevOpen);
-  };
+  // const handleToggle = () => {
+  //   setOpen((prevOpen) => !prevOpen);
+  // };
 
-  const handleClose = (event: any) => {
-    if (anchorRef?.current && (anchorRef.current as any).contains(event.target)) {
-      return;
-    }
-    setOpen(false);
-  };
+  // const handleClose = (event: any) => {
+  //   if (anchorRef?.current && (anchorRef.current as any).contains(event.target)) {
+  //     return;
+  //   }
+  //   setOpen(false);
+  // };
 
-  function handleListKeyDown(event: any) {
-    if (event.key === 'Tab') {
-      event.preventDefault();
-      setOpen(false);
-    }
-  }
+  // function handleListKeyDown(event: any) {
+  //   if (event.key === 'Tab') {
+  //     event.preventDefault();
+  //     setOpen(false);
+  //   }
+  // }
 
   // return focus to the button when we transitioned from !open -> open
   const prevOpen = React.useRef(open);
@@ -55,7 +55,7 @@ const TopNav: React.FC<TopNavProps> = ({
     <HeaderBar>
       <Logo>
         <a href='https://ghostlifeclub.com'>
-          <img alt='' src='/HEADER.png' />
+          <img alt='' src='header.png' />
         </a>
       </Logo>
       <Menu>
@@ -111,31 +111,31 @@ const HeaderBar = styled.div`
   margin-bottom: 30px;
 `
 
-const DropdownAnchor = styled.li`
-  cursor: pointer;
+// const DropdownAnchor = styled.li`
+  // cursor: pointer;
 
-  &:hover {
-    color: rgb(131,146,161);
-  }
+  // &:hover {
+  //   color: rgb(131,146,161);
+  // }
 
-  > div {
-    z-index: 1000;
-  }
+  // > div {
+  //   z-index: 1000;
+  // }
 
-  .MuiList-root {
-    margin-top: 15px;
+  // .MuiList-root {
+  //   margin-top: 15px;
 
-    a {
-      padding-top: 4px;
-      padding-bottom: 4px;
+  //   a {
+  //     padding-top: 4px;
+  //     padding-bottom: 4px;
 
-      &:hover {
-        border-bottom: 0px;
-        color: #fff;
-      }
-    }
-  }
-`
+  //     &:hover {
+  //       border-bottom: 0px;
+  //       color: #fff;
+      // }
+    // }
+  // }
+// `
 
 // const WalletAmount = styled.div`
 //   color: black;

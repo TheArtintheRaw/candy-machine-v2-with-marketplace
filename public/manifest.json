@@ -1,15 +1,15 @@
 {
-  "short_name": "Mint Page",
-  "name": "Mint Page",
-  "icons": [
-    {
-      "src": "HEADER.png",
-      "type": "image/png",
-      "sizes": "358x358"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+    "short_name": "The GLC",
+    "name": "The Ghostlife Club",
+    "icons": [
+        {
+            "src": "header.png",
+            "type": "image/png",
+            "sizes": "358x358"
+        }
+    ],
+    "start_url": ".",
+    "display": "fullscreen",
+    "theme_color": "#f14f14",
+    "background_color": "#ffffff"
 }
