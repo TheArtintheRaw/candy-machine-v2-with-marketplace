@@ -5,7 +5,7 @@ import { styled } from '@mui/material';
 export const CTAButton = styled(CrossmintPayButton)`
     text-decoration-style: solid;
     text-transform: uppercase;
-
+    justify-content: center;
     button.my-custom-crossmint-button {
         background: linear-gradient(
             90deg,
@@ -13,7 +13,7 @@ export const CTAButton = styled(CrossmintPayButton)`
             rgb(0, 0, 0) 35%,
             rgb(28, 211, 150) 100%
         );
-        justify-content: center;
+
         font-family: 'Playfair';
         font-weight: 1000;
     }

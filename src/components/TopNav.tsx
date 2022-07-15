@@ -1,139 +1,159 @@
-import React from 'react'
-import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
-import { Link } from 'react-router-dom'
-import { useAnchorWallet } from '@solana/wallet-adapter-react'
-import CurrencyToggle from './CurrencyToggle'
-import Paper from '@material-ui/core/Paper'
-import Popper from '@material-ui/core/Popper'
-import MenuItem from '@material-ui/core/MenuItem'
-import MenuList from '@material-ui/core/MenuList'
-import ClickAwayListener from '@material-ui/core/ClickAwayListener'
+import React from 'react';
+import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
+import { Link } from 'react-router-dom';
+import { useAnchorWallet } from '@solana/wallet-adapter-react';
+import CurrencyToggle from './CurrencyToggle';
+import Paper from '@material-ui/core/Paper';
+import Popper from '@material-ui/core/Popper';
+import MenuItem from '@material-ui/core/MenuItem';
+import MenuList from '@material-ui/core/MenuList';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 interface TopNavProps {
-  showCurrencyToggle?: boolean,
+    showCurrencyToggle?: boolean;
 }
 
-const TopNav: React.FC<TopNavProps> = ({
-  showCurrencyToggle = false,
-}) => {
-  const wallet = useAnchorWallet()
+const TopNav: React.FC<TopNavProps> = ({ showCurrencyToggle = false }) => {
+    const wallet = useAnchorWallet();
 
-  const [open, setOpen] = React.useState(false)
-  const anchorRef = React.useRef<HTMLLIElement>(null)
+    const [open, setOpen] = React.useState(false);
+    const anchorRef = React.useRef<HTMLLIElement>(null);
 
-  const handleToggle = () => {
-    setOpen((prevOpen) => !prevOpen);
-  };
+    const handleToggle = () => {
+        setOpen((prevOpen) => !prevOpen);
+    };
 
-  const handleClose = (event: any) => {
-    if (anchorRef?.current && (anchorRef.current as any).contains(event.target)) {
-      return;
-    }
-    setOpen(false);
-  };
+    const handleClose = (event: any) => {
+        if (
+            anchorRef?.current &&
+            (anchorRef.current as any).contains(event.target)
+        ) {
+            return;
+        }
+        setOpen(false);
+    };
 
-  function handleListKeyDown(event: any) {
-    if (event.key === 'Tab') {
-      event.preventDefault();
-      setOpen(false);
-    }
-  }
-
-  const prevOpen = React.useRef(open);
-  React.useEffect(() => {
-    if (prevOpen.current === true && open === false) {
-      if (anchorRef.current !== null) anchorRef.current.focus();
+    function handleListKeyDown(event: any) {
+        if (event.key === 'Tab') {
+            event.preventDefault();
+            setOpen(false);
+        }
     }
 
-    prevOpen.current = open;
-  }, [open]);
+    const prevOpen = React.useRef(open);
+    React.useEffect(() => {
+        if (prevOpen.current === true && open === false) {
+            if (anchorRef.current !== null) anchorRef.current.focus();
+        }
 
-  return (
-    <HeaderBar>
-      <Logo>
-        <a href='https://ghostlifeclub.com'>
-          <img alt='' src='header.png' />
-        </a>
-      </Logo>
-      <Menu>
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
-        <li>
-          <Link to='/marketplace'>Marketplace</Link>
-        </li>
-        <li>
-          <Link to='/sell'>Sell</Link>
-        </li>
-        <li>
-          <a href ='https://stake.cardinal.so/glc'>Staking</a>
-          </li>
-        <DropdownAnchor ref={anchorRef} onClick={handleToggle}>
-         Other Layouts
-         <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
-           {({ TransitionProps, placement }) => (
-              <Paper>
-                <ClickAwayListener onClickAway={handleClose}>
-                  <MenuList autoFocusItem={open} onKeyDown={handleListKeyDown}>
-                    <MenuItem><Link to='/'>Home</Link></MenuItem>
-                    <MenuItem><Link to='/marketplace'>Marketplace</Link></MenuItem>
-                    <MenuItem><Link to='/sell'>Sell</Link></MenuItem>
-                    <MenuItem><a href ='https://stake.cardinal.so/glc'>Staking</a></MenuItem>
-                    </MenuList>
-               </ClickAwayListener>
-             </Paper>
-           )}
-          </Popper>
-        </DropdownAnchor>
-       </Menu>
-      { showCurrencyToggle && <CurrencyToggle />}
-      <Wallet>
-        {wallet ? (
-          <ConnectButton />
-        ) : (
-          <ConnectButton>Connect Wallet</ConnectButton>
-        )}
-      </Wallet>
-    </HeaderBar>
-  )
-}
+        prevOpen.current = open;
+    }, [open]);
+
+    return (
+        <HeaderBar>
+            <Logo>
+                <a href='https://ghostlifeclub.com'>
+                    <img alt='' src='header.png' />
+                </a>
+            </Logo>
+            <Menu>
+                <li>
+                    <Link to='/'>Home</Link>
+                </li>
+                <li>
+                    <Link to='/marketplace'>Marketplace</Link>
+                </li>
+                <li>
+                    <Link to='/sell'>Sell</Link>
+                </li>
+                <li>
+                    <a href='https://stake.cardinal.so/glc'>Staking</a>
+                </li>
+                <DropdownAnchor ref={anchorRef} onClick={handleToggle}>
+                    Menu
+                    <Popper
+                        open={open}
+                        anchorEl={anchorRef.current}
+                        role={undefined}
+                        transition
+                        disablePortal>
+                        {({ TransitionProps, placement }) => (
+                            <Paper>
+                                <ClickAwayListener onClickAway={handleClose}>
+                                    <MenuList
+                                        autoFocusItem={open}
+                                        onKeyDown={handleListKeyDown}>
+                                        <MenuItem>
+                                            <Link to='/'>Home</Link>
+                                        </MenuItem>
+                                        <MenuItem>
+                                            <Link to='/marketplace'>
+                                                Marketplace
+                                            </Link>
+                                        </MenuItem>
+                                        <MenuItem>
+                                            <Link to='/sell'>Sell</Link>
+                                        </MenuItem>
+                                        <MenuItem>
+                                            <a href='https://stake.cardinal.so/glc'>
+                                                Staking
+                                            </a>
+                                        </MenuItem>
+                                    </MenuList>
+                                </ClickAwayListener>
+                            </Paper>
+                        )}
+                    </Popper>
+                </DropdownAnchor>
+            </Menu>
+            {showCurrencyToggle && <CurrencyToggle />}
+            <Wallet>
+                {wallet ? (
+                    <ConnectButton />
+                ) : (
+                    <ConnectButton>Connect Wallet</ConnectButton>
+                )}
+            </Wallet>
+        </HeaderBar>
+    );
+};
 
 const HeaderBar = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 30px;
-`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+`;
 
 const DropdownAnchor = styled.li`
- cursor: pointer;
+    cursor: pointer;
 
-  &:hover {
-    color: rgb(131,146,161);
-  }
-
-  > div {
-    z-index: 1000;
-  }
-
-.MuiList-root {
-    margin-top: 15px;
-
-   a {
-     padding-top: 4px;
-     padding-bottom: 4px;
-
-     &:hover {
-       border-bottom: 0px;
-       color: #fff;
-     }
+    &:hover {
+        color: rgb(131, 146, 161);
     }
-  }
-`
+
+    > div {
+        z-index: 1000;
+    }
+
+    .MuiList-root {
+        margin-top: 15px;
+
+        a {
+            padding-top: 4px;
+            padding-bottom: 4px;
+
+            &:hover {
+                border-bottom: 0px;
+                color: #fff;
+            }
+        }
+    }
+`;
 
 // const WalletAmount = styled.div`
 //   color: black;
@@ -164,59 +184,59 @@ const DropdownAnchor = styled.li`
 // `
 
 const Wallet = styled.ul`
-  flex: 0 0 auto;
-  margin: 0;
-  padding: 0;
-`
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 0;
+`;
 
 const ConnectButton = styled(WalletMultiButton)`
-  border-radius: 18px !important;
-  padding: 6px 16px;
-  background-color: #4e44ce;
-  margin: 0 auto;
-`
+    border-radius: 18px !important;
+    padding: 6px 16px;
+    background-color: #4e44ce;
+    margin: 0 auto;
+`;
 
 const Logo = styled.div`
-  flex: 0 0 auto;
-  margin-right: 10px;
+    flex: 0 0 auto;
+    margin-right: 10px;
 
-  img {
-    height: 60px;
-  }
-`
+    img {
+        height: 60px;
+    }
+`;
 
 const Menu = styled.ul`
-  list-style: none;
-  display: inline-flex;
-  flex: 1 0 auto;
-  margin-bottom: 0;
+    list-style: none;
+    display: inline-flex;
+    flex: 1 0 auto;
+    margin-bottom: 0;
 
-  li {
-    margin: 0 12px;
+    li {
+        margin: 0 12px;
 
-    a {
-      color: var(--main-text-color);
-      list-style-image: none;
-      list-style-position: outside;
-      list-style-type: none;
-      outline: none;
-      text-decoration: none;
-      text-size-adjust: 100%;
-      touch-action: manipulation;
-      transition: color 0.3s;
-      padding-bottom: 15px;
+        a {
+            color: var(--main-text-color);
+            list-style-image: none;
+            list-style-position: outside;
+            list-style-type: none;
+            outline-color: #000000;
+            text-decoration: none;
+            text-size-adjust: 100%;
+            touch-action: manipulation;
+            transition: color 0.3s;
+            padding-bottom: 15px;
 
-      img {
-        max-height: 26px;
-      }
+            img {
+                max-height: 26px;
+            }
+        }
+
+        a:hover,
+        a:active {
+            color: rgb(131, 146, 161);
+            border-bottom: 4px solid var(--title-text-color);
+        }
     }
+`;
 
-    a:hover,
-    a:active {
-      color: rgb(131, 146, 161);
-      border-bottom: 4px solid var(--title-text-color);
-    }
-  }
-`
-
-export default TopNav
+export default TopNav;
