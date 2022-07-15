@@ -19,7 +19,7 @@ import {
 import { MintButton } from '../components/MintButton';
 import { AlertState, getAtaForMint, toDate } from '../utils/utils';
 import { CrossmintButton } from '../components/crossmint';
-import headerimg from '../public/header.png';
+import headerimg from '../img/header.png';
 
 const cluster = process.env.REACT_APP_SOLANA_NETWORK!.toString();
 const decimals = process.env.REACT_APP_SPL_TOKEN_TO_MINT_DECIMALS
