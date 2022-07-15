@@ -724,7 +724,7 @@ const Home = (props: HomeProps) => {
                         <br />
                         Solsea -{' '}
                         <a href='https//solsea.io/c/6299c27721e9db08e0cf6162'>
-                            https://solsea.io/c/6299c27721e9db08e0cf6162
+                            Solsea
                         </a>
                         <br />
                     </p>
