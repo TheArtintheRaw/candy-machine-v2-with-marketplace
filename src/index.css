@@ -7,7 +7,7 @@
     --card-background-color: #4e4d4d;
     --card-background-lighter-color: #0000007a;
     --main-text-color: #cecece;
-    --title-text-color: #0d0e0d;
+    --title-text-color: #036e45;
     --topnav-text-color: #0d0e0d;
 }
 
@@ -22,7 +22,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #0f0127;
-    color: #ffffff;
+    color: #7e7c7c;
     text-shadow: 0 10 10px #1bfd8c, 0 10 10px #ff00d4
 }
 

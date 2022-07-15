@@ -53,6 +53,42 @@ const TopNav: React.FC<TopNavProps> = ({ showCurrencyToggle = false }) => {
 
     return (
         <HeaderBar>
+            <DropdownAnchor ref={anchorRef} onClick={handleToggle}>
+                MARKET MENU
+                <Popper
+                    open={open}
+                    anchorEl={anchorRef.current}
+                    role={undefined}
+                    transition
+                    disablePortal>
+                    {({ TransitionProps, placement }) => (
+                        <Paper>
+                            <ClickAwayListener onClickAway={handleClose}>
+                                <MenuList
+                                    autoFocusItem={open}
+                                    onKeyDown={handleListKeyDown}>
+                                    <MenuItem>
+                                        <Link to='/'>HOME</Link>
+                                    </MenuItem>
+                                    <MenuItem>
+                                        <Link to='/marketplace'>
+                                            MARKETPLACE
+                                        </Link>
+                                    </MenuItem>
+                                    <MenuItem>
+                                        <Link to='/sell'>SELL</Link>
+                                    </MenuItem>
+                                    <MenuItem>
+                                        <a href='https://stake.cardinal.so/glc'>
+                                            STAKING
+                                        </a>
+                                    </MenuItem>
+                                </MenuList>
+                            </ClickAwayListener>
+                        </Paper>
+                    )}
+                </Popper>
+            </DropdownAnchor>
             <Logo>
                 <a href='https://ghostlifeclub.com'>
                     <img alt='headerimg' src={headerimg} />
@@ -60,53 +96,17 @@ const TopNav: React.FC<TopNavProps> = ({ showCurrencyToggle = false }) => {
             </Logo>
             <Menu>
                 <li>
-                    <Link to='/'>Home</Link>
+                    <Link to='/'>HOME</Link>
                 </li>
                 <li>
-                    <Link to='/marketplace'>Marketplace</Link>
+                    <Link to='/marketplace'>MARKETPLACE</Link>
                 </li>
                 <li>
-                    <Link to='/sell'>Sell</Link>
+                    <Link to='/sell'>SELL</Link>
                 </li>
                 <li>
-                    <a href='https://stake.cardinal.so/glc'>Staking</a>
+                    <a href='https://stake.cardinal.so/glc'>STAKING</a>
                 </li>
-                <DropdownAnchor ref={anchorRef} onClick={handleToggle}>
-                    Menu
-                    <Popper
-                        open={open}
-                        anchorEl={anchorRef.current}
-                        role={undefined}
-                        transition
-                        disablePortal>
-                        {({ TransitionProps, placement }) => (
-                            <Paper>
-                                <ClickAwayListener onClickAway={handleClose}>
-                                    <MenuList
-                                        autoFocusItem={open}
-                                        onKeyDown={handleListKeyDown}>
-                                        <MenuItem>
-                                            <Link to='/'>HOME</Link>
-                                        </MenuItem>
-                                        <MenuItem>
-                                            <Link to='/marketplace'>
-                                                MARKETPLACE
-                                            </Link>
-                                        </MenuItem>
-                                        <MenuItem>
-                                            <Link to='/sell'>SELL</Link>
-                                        </MenuItem>
-                                        <MenuItem>
-                                            <a href='https://stake.cardinal.so/glc'>
-                                                STAKING
-                                            </a>
-                                        </MenuItem>
-                                    </MenuList>
-                                </ClickAwayListener>
-                            </Paper>
-                        )}
-                    </Popper>
-                </DropdownAnchor>
             </Menu>
             {showCurrencyToggle && <CurrencyToggle />}
             <Wallet>
@@ -131,7 +131,22 @@ const HeaderBar = styled.div`
 
 const DropdownAnchor = styled.li`
     cursor: pointer;
+    display: none;
 
+    @media screen and (max-width: 768px) {
+        display: flex;
+        flex: 0 0 auto;
+        position: fixed;
+        top: 10%;
+        left: 30%;
+        transform: translate(-100%, 60%);
+    }
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #e6e3e3;
+    text-decoration: underline;
+    text-shadow: 0 0 50 50 #ffffff;
+    padding: 10;
     &:hover {
         color: rgb(131, 146, 161);
     }
@@ -142,14 +157,15 @@ const DropdownAnchor = styled.li`
 
     .MuiList-root {
         margin-top: 15px;
+        background-color: #7c7b7b;
 
         a {
             padding-top: 4px;
             padding-bottom: 4px;
-
+            font-weight: 1000;
             &:hover {
                 border-bottom: 0px;
-                color: #fff;
+                color: #02ff8978;
             }
         }
     }
@@ -211,20 +227,28 @@ const Menu = styled.ul`
     flex: 1 0 auto;
     margin-bottom: 0;
 
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+
+    @media screen and (max-width: 960px) {
+        transition: 0.8s all ease;
+    }
     li {
         margin: 0 12px;
 
         a {
-            color: var(--topnav-text-color);
-            list-style-image: none;
+            color: var(--main-text-color);
             list-style-position: outside;
             list-style-type: none;
+            list-style-image: none;
             outline-color: #000000;
             text-decoration: none;
             text-size-adjust: 100%;
             touch-action: manipulation;
             transition: color 0.3s;
             padding-bottom: 15px;
+            text-emphasis-style: initial;
 
             img {
                 max-height: 26px;

@@ -732,8 +732,9 @@ const Home = (props: HomeProps) => {
                 <Des elevation={2}>
                     <LogoAligner>
                         <Image src={headerimg} alt='headerimg'></Image>
+
+                        <GoldTitle>Sticking to Our Guns</GoldTitle>
                     </LogoAligner>
-                    <GoldTitle>Sticking to Our Guns</GoldTitle>
                     <p>
                         In conclusion, we have no intention of rushing or
                         cutting corners in the process of building our platform.

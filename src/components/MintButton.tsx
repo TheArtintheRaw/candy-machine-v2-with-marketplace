@@ -10,7 +10,8 @@ export const CTAButton = styled(Button)`
     margin: 0 auto !important;
     background-color: var(--main-background-color) !important;
     min-width: 120px !important;
-    font-size: 1em !important;
+    font-size: 1rem !important;
+    font-weight: 1000;
 `;
 
 export const MintButton = ({
