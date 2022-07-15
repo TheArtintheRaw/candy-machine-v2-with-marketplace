@@ -215,7 +215,7 @@ const Menu = styled.ul`
         margin: 0 12px;
 
         a {
-            color: var(--main-text-color);
+            color: var(--topnav-text-color);
             list-style-image: none;
             list-style-position: outside;
             list-style-type: none;
