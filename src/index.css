@@ -23,7 +23,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background-color: #0f0127;
     color: #ffffff;
-    text-shadow: 0 0 3px #1bfd8c, 0 0 5px #ff00d4
+    text-shadow: 0 10 10px #1bfd8c, 0 10 10px #ff00d4
 }
 
 code {

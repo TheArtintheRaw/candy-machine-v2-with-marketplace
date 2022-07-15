@@ -8,7 +8,7 @@ import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-
+import headerimg from '../img/header.png';
 import styled from 'styled-components';
 
 interface TopNavProps {
@@ -55,7 +55,7 @@ const TopNav: React.FC<TopNavProps> = ({ showCurrencyToggle = false }) => {
         <HeaderBar>
             <Logo>
                 <a href='https://ghostlifeclub.com'>
-                    <img alt='' src='header.png' />
+                    <img alt='headerimg' src={headerimg} />
                 </a>
             </Logo>
             <Menu>
@@ -86,19 +86,19 @@ const TopNav: React.FC<TopNavProps> = ({ showCurrencyToggle = false }) => {
                                         autoFocusItem={open}
                                         onKeyDown={handleListKeyDown}>
                                         <MenuItem>
-                                            <Link to='/'>Home</Link>
+                                            <Link to='/'>HOME</Link>
                                         </MenuItem>
                                         <MenuItem>
                                             <Link to='/marketplace'>
-                                                Marketplace
+                                                MARKETPLACE
                                             </Link>
                                         </MenuItem>
                                         <MenuItem>
-                                            <Link to='/sell'>Sell</Link>
+                                            <Link to='/sell'>SELL</Link>
                                         </MenuItem>
                                         <MenuItem>
                                             <a href='https://stake.cardinal.so/glc'>
-                                                Staking
+                                                STAKING
                                             </a>
                                         </MenuItem>
                                     </MenuList>
