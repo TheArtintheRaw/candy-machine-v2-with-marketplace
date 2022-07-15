@@ -19,6 +19,7 @@ import {
 import { MintButton } from '../components/MintButton';
 import { AlertState, getAtaForMint, toDate } from '../utils/utils';
 import { CrossmintButton } from '../components/crossmint';
+import headerimg from '../public/header.png';
 
 const cluster = process.env.REACT_APP_SOLANA_NETWORK!.toString();
 const decimals = process.env.REACT_APP_SPL_TOKEN_TO_MINT_DECIMALS
@@ -684,7 +685,7 @@ const Home = (props: HomeProps) => {
             <DesContainer>
                 <Des elevation={2}>
                     <LogoAligner>
-                        <Image src='header.png' alt='headerimg' />
+                        <Image src={headerimg} alt='headerimg' />
                         <GoldTitle>GLC Spirit</GoldTitle>
                     </LogoAligner>
                     <p>
@@ -700,7 +701,7 @@ const Home = (props: HomeProps) => {
                 </Des>
                 <Des elevation={2}>
                     <LogoAligner>
-                        <Image src='header.png' alt='headerimg' />
+                        <Image src={headerimg} alt='headerimg' />
                         <GoldTitle>
                             List of Available Secondary Marketplaces for Resale.
                         </GoldTitle>
@@ -730,7 +731,7 @@ const Home = (props: HomeProps) => {
                 </Des>
                 <Des elevation={2}>
                     <LogoAligner>
-                        <Image src='header.png' alt='headerimg'></Image>
+                        <Image src={headerimg} alt='headerimg'></Image>
                     </LogoAligner>
                     <GoldTitle>Sticking to Our Guns</GoldTitle>
                     <p>
