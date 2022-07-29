@@ -608,7 +608,7 @@ const Home = (props: HomeProps) => {
                         />
                     )}
                     <br />
-                    <MintButtonContainer>
+                    <MintButtonContainerstyle="align-items:center, justify-content:center">
                         {!isActive &&
                         !isEnded &&
                         candyMachine?.state.goLiveDate &&
@@ -685,7 +685,7 @@ const Home = (props: HomeProps) => {
             <DesContainer>
                 <Des elevation={2}>
                     <LogoAligner>
-                        <Image src={headerimg} alt='headerimg' />
+                        <Image src={headerimg} alt='The GLC logo' />
                         <GoldTitle>GLC Spirit</GoldTitle>
                     </LogoAligner>
                     <p>
@@ -701,10 +701,10 @@ const Home = (props: HomeProps) => {
                 </Des>
                 <Des elevation={2}>
                     <LogoAligner>
-                        <Image src={headerimg} alt='headerimg' />
+                        <Image src={headerimg} alt='The GLC logo' />
                         <GoldTitle>
                             List of Available Secondary Marketplaces for Resale.
-                        </GoldTitle>
+                            </GoldTitle>
                     </LogoAligner>
                     <p>
                         Magic Eden -{' '}
@@ -731,7 +731,7 @@ const Home = (props: HomeProps) => {
                 </Des>
                 <Des elevation={2}>
                     <LogoAligner>
-                        <Image src={headerimg} alt='headerimg'></Image>
+                        <Image src={headerimg} alt='The GLC logo'></Image>
 
                         <GoldTitle>Sticking to Our Guns</GoldTitle>
                     </LogoAligner>
