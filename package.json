@@ -15,7 +15,7 @@
         "@material-ui/lab": "^4.0.0-alpha.60",
         "@material-ui/styles": "^4.11.5",
         "@mui/material": "^5.9.0",
-        "@mui/styled-engine": "^5.8.7",
+        "@mui/styled-engine": "^5.10.0",
         "@project-serum/anchor": "^0.14.0",
         "@solana/buffer-layout": "4.0.0",
         "@solana/spl-token": "^0.1.8",
