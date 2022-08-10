@@ -16,7 +16,7 @@
         "@material-ui/styles": "^4.11.5",
         "@mui/material": "^5.9.0",
         "@mui/styled-engine": "^5.8.7",
-        "@project-serum/anchor": "^0.14.0",
+        "@project-serum/anchor": "^0.25.0",
         "@solana/buffer-layout": "4.0.0",
         "@solana/spl-token": "^0.1.8",
         "@solana/wallet-adapter-base": "^0.7.1",
